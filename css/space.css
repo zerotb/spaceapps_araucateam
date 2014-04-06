@@ -4,8 +4,8 @@ body{
 }
 
 #box_mapa { 
-	position:absolute; 
-	height: 300px; 
-	width: 100%; 
-	padding:0px;
+	height: 88%;
+    margin-left: 1%;
+    position: absolute;
+    width: 98%;
 }
