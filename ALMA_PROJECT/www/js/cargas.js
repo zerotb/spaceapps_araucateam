@@ -1,6 +1,7 @@
 //objetos
 var padInfo;
 var operational;
+var xml;
 
 var listadoAntenas = [];
 
@@ -45,7 +46,7 @@ function getOperational(){
         url: "data/operational.xml",
         dataType: "xml",
         success: function(data) {
-            console.log(data);
+            xml = data.find("Log");
         }
     });
 }
