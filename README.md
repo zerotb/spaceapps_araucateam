@@ -1,2 +1,0 @@
-spaceapps_araucateam
-====================
