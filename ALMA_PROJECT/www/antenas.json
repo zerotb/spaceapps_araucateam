@@ -1,0 +1,47 @@
+[{
+	
+	"id":"DA63",
+	"pad":"A019",
+	"lat":"-72.3659",
+	"lng":"-22.3659",
+	"alt":"-22.3659",
+	"hw":[{
+		"id":"LORR",
+		"estado":"operacional",
+		"errores":3
+		},
+		{
+		"id":"LORA",
+		"estado":"operacional",
+		"errores":3
+		}]
+
+},
+{
+	
+	"id":"DA64",
+	"pad":"A020",
+	"lat":"-72.3659",
+	"lng":"-22.3659",
+	"alt":"-22.3659",
+	"hw":[{
+		"id":"LIRR",
+		"estado":"operacional",
+		"errores":0
+		}]
+
+},
+{
+	
+	"id":"DA65",
+	"pad":"A021",
+	"lat":"-72.3659",
+	"lng":"-22.3659",
+	"alt":"-22.3659",
+	"hw":[{
+		"id":"LORR",
+		"estado":"operacional",
+		"errores":0
+		}]
+
+}]
