@@ -3,7 +3,8 @@ var marcador = null;
 
 $(document).ready(function() {
 	
-		
+	getPadInfo();
+	
 	// Config del mapa
 	var mapOptions = {
 		// AOS Technical Building Geographic LAT LONG
@@ -31,3 +32,4 @@ $(document).ready(function() {
 
 	
 });
+
