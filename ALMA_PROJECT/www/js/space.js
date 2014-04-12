@@ -28,7 +28,16 @@ $(document).ready(function() {
 		$('#barDown').css('margin-top', heigth-80);
 	});
 	
+	/*
+		stop
+		start
+		configure
+		initialize
+		operational
 
+		--> si fallá, va a stop- y el ciclo pued iniciar nuevamente.
+		128 megas de cada archivo
+	*/
 
 	
 });
