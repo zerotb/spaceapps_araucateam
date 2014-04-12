@@ -6,8 +6,9 @@ $(document).ready(function() {
 		
 	// Config del mapa
 	var mapOptions = {
-		center: new google.maps.LatLng(-38.739398, -72.598686), // lat, long Temuco
-		zoom: 6,
+		// AOS Technical Building Geographic LAT LONG
+		center: new google.maps.LatLng(-23.02336414219032, -67.75367796421051),
+		zoom: 15,
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
 
@@ -15,7 +16,7 @@ $(document).ready(function() {
 	map = new google.maps.Map(document.getElementById("box_mapa"), mapOptions);
 
 	// Ubicamos al usuario
-	BuscarUbicacion();
+	//BuscarUbicacion();
 	
 	var heigth = $('#box_mapa').height();
 	$('#barDown').css('margin-top', heigth-80);
@@ -26,5 +27,7 @@ $(document).ready(function() {
 		$('#barDown').css('margin-top', heigth-80);
 	});
 	
+
+
 	
 });

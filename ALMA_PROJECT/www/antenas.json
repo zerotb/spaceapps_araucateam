@@ -14,7 +14,19 @@
 		"id":"LORA",
 		"estado":"operacional",
 		"errores":3
-		}]
+		}],
+	"dis":[
+		{
+			"idAntena": "DA64",
+			"distancia": "130",
+			"unidad": "metros"
+		},
+		{
+			"idAntena": "DA65",
+			"distancia": "230",
+			"unidad": "metros"
+		}
+	]
 
 },
 {
@@ -25,10 +37,22 @@
 	"lng":"-22.3659",
 	"alt":"-22.3659",
 	"hw":[{
-		"id":"LIRR",
+		"id":"DGCK",
 		"estado":"operacional",
 		"errores":0
-		}]
+		}],
+	"dis":[
+		{
+			"idAntena": "DA63",
+			"distancia": "130",
+			"unidad": "metros"
+		},
+		{
+			"idAntena": "DA65",
+			"distancia": "50",
+			"unidad": "metros"
+		}
+	]
 
 },
 {
@@ -39,9 +63,21 @@
 	"lng":"-22.3659",
 	"alt":"-22.3659",
 	"hw":[{
-		"id":"LORR",
-		"estado":"operacional",
+		"id":"DGCK",
+		"estado":"stop",
 		"errores":0
-		}]
+		}],
+	"dis":[
+		{
+			"idAntena": "DA63",
+			"distancia": "230",
+			"unidad": "metros"
+		},
+		{
+			"idAntena": "DA64",
+			"distancia": "50",
+			"unidad": "metros"
+		}
+	]
 
 }]
