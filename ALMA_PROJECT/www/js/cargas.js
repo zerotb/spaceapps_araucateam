@@ -2,26 +2,29 @@
 var padInfo;
 var operational;
 
-//archivo CSV transformado a objeto
+var listadoAntenas = [];
+
+
+// Procesamos el texto plano, convirtiéndolo a objeto
 function processData(allText) {
+    
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(',');
-    var lines = [];
 
     for (var i=1; i<allTextLines.length; i++) {
         var data = allTextLines[i].split(',');
         if (data.length == headers.length) {
 
-            var tarr = [];
+            var antena = new Object();
+
             for (var j=0; j<headers.length; j++) {
-                tarr.push(headers[j]+":"+data[j]);
+                antena[headers[j]] = data[j];
             }
-            lines.push(tarr);
+            
+            listadoAntenas.push(antena);
         }
     }
-    
-    console.log(lines);
-    padInfo = lines;
+
 }
 
 //ajax para obtener archvio CSV
