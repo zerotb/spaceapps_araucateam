@@ -3,7 +3,8 @@ var marcador = null;
 
 $(document).ready(function() {
 	
-		
+	getPadInfo();
+	
 	// Config del mapa
 	var mapOptions = {
 		center: new google.maps.LatLng(-38.739398, -72.598686), // lat, long Temuco
@@ -28,3 +29,4 @@ $(document).ready(function() {
 	
 	
 });
+
