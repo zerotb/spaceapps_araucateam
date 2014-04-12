@@ -20,7 +20,7 @@ function processData(allText) {
 
             for (var j=0; j<headers.length; j++) {
             	
-            	tarr.push(headers[j]+":"+data[j]);
+            	antena[headers[j]]=+data[j];
                 
 
             }
@@ -29,8 +29,6 @@ function processData(allText) {
         }
     }
     
-
-    padInfo = lines;
 
 }
 

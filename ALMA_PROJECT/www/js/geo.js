@@ -109,3 +109,34 @@ function errorCallback(error) {
 function clearWatch(watchID) {
     window.navigator.geolocation.clearWatch(watchID);
 }
+
+
+function cargarAntenas(){
+
+/*
+    var json;
+    $.ajax({
+        type: "GET",
+        url: "antenas.json",
+        dataType: "json",
+        success: function(data) {
+
+            console.log(data);
+            $.each(data,function (i, item) {
+              //console.log("->"+item.id);
+              var antena = {"lat":item.lat,"long":item.lng};
+              placeAntenna(antena);
+
+            });
+        }
+    });
+*/
+            console.log(listadoAntenas);
+            $.each(listadoAntenas,function (i, item) {
+              //console.log("->"+item.id);
+              var antena = {"lat":item.Latitude,"long":item.Longitude};
+              placeAntenna(antena);
+
+            });
+
+}
