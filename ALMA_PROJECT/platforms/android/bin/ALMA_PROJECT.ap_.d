@@ -24,6 +24,7 @@
 /var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/js/space.js \
 /var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/js/bootstrap.js \
 /var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/js/jquery/jquery.mobile-1.4.2.min.js \
+/var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/js/jquery/jquery.mobile-1.4.2.min.css \
 /var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/js/jquery/jquery.mobile.structure-1.4.2.min.css \
 /var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/js/jquery/jquery-1.10.2.min.js \
 /var/www/codebase/spaceapps/spaceapps_araucateam/ALMA_PROJECT/platforms/android/assets/www/css/bootstrap.css \

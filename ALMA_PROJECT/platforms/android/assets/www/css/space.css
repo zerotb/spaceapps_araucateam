@@ -5,7 +5,18 @@ body{
 
 #box_mapa { 
 	height: 88%;
-    margin-left: 1%;
+    
     position: absolute;
     width: 98%;
+}
+
+.barDown{
+
+}
+
+.btnIzq{
+	margin-left: 22px;
+}
+.btnDer{
+	float: right;
 }

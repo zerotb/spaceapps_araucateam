@@ -7,10 +7,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
   
         <!-- jQuery Mobile -->
-        <link rel="stylesheet" href="themes/terremoto.css" />
-		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<!--         <link rel="stylesheet" href="themes/terremoto.css" /> -->
+<!-- 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" /> -->
 
-		<link rel="stylesheet" href="js/jquery/jquery.mobile.structure-1.4.2.min.css" /> 
+		<link rel="stylesheet" href="js/jquery/jquery.mobile-1.4.2.min.css" /> 
 		<script src="js/jquery/jquery-1.10.2.min.js"></script> 
 		<script src="js/jquery/jquery.mobile-1.4.2.min.js"></script> 
 
@@ -31,14 +31,16 @@
 
 	</head>
 	<body>
-		<h5>ARAUCA TEAM FOREVA! ... AND EVAH!</h5>
-		
-
-
-		<div id="box_mapa"></div>
-
-					
-
+		<div data-role="header" data-theme="b">
+			<h5 style="white-space: normal;">ARAUCA TEAM FOREVA! ... AND EVAH!</h5>
+		</div>
+		<div data-role="content">
+			<div id="box_mapa"></div>
+			<div id="barDown">
+				<a data-role="button" data-inline="true" class="btnDer">Boton 1</a>
+				<a data-role="button" data-inline="true" class="btnIzq">Boton 2</a>
+			</div>
+		</div>
 
 	</body>
 </html>
