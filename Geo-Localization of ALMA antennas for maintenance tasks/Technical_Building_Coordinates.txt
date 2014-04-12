@@ -1,0 +1,4 @@
+AOS Technical Building Geographic Coordinates:
+Latitude = -23.02336414219032
+Longitude = -67.75367796421051
+Height = 5074.88584582601[m]

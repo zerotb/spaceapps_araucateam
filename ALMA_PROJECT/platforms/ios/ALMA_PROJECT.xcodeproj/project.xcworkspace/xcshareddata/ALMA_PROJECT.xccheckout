@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>73F6B83F-1035-4D9D-AD3F-0C691849D6B4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ALMA_PROJECT</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CCC5207D-BD8B-4176-A402-5B02649F3F35</key>
+		<string>https://github.com/zerotb/spaceapps_araucateam.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ALMA_PROJECT/platforms/ios/ALMA_PROJECT.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CCC5207D-BD8B-4176-A402-5B02649F3F35</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zerotb/spaceapps_araucateam.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CCC5207D-BD8B-4176-A402-5B02649F3F35</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CCC5207D-BD8B-4176-A402-5B02649F3F35</string>
+			<key>IDESourceControlWCCName</key>
+			<string>spaceapps_araucateam</string>
+		</dict>
+	</array>
+</dict>
+</plist>
