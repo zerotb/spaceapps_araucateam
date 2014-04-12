@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class cl.spaceapps.almaproject.ALMA_PROJECT { <init>(...); }
+
