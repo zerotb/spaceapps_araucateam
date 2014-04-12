@@ -2,6 +2,7 @@ var nav = null;
 var watchID;
 var geoloc;
 var marcadorUsuario = null;
+var antenas = [];
 
 function BuscarUbicacion() {
 
@@ -58,6 +59,37 @@ function showLocation(position) {
     marcadorUsuario.setPosition(latlng);
   }
 
+}
+
+function placeAntenna(antena) {
+
+  usrLat = antena.lat;
+  usrLong = antena.long;
+
+
+  var latlng = new google.maps.LatLng(usrLat, usrLong);
+
+  //if(marcador == null){
+    
+    // Marcador
+    var marcador = 
+      new google.maps.Marker({
+      position: latlng,
+      map: map,
+      icon: "http://png-3.findicons.com/files/icons/2218/comfi_telecom/32/antenna.png"
+      });
+
+    map.setCenter(latlng);
+
+    antenas.push(marcador);
+    //map.setZoom(16);
+/*
+  }
+  else
+  {
+    marcador.setPosition(latlng);
+  }
+*/
 }
 
 
