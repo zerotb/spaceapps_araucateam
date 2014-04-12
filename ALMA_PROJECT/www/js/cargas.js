@@ -15,12 +15,13 @@ function processData(allText) {
             var tarr = [];
             for (var j=0; j<headers.length; j++) {
                 tarr.push(headers[j]+":"+data[j]);
+                
             }
             lines.push(tarr);
         }
     }
     
-    console.log(lines);
+
     padInfo = lines;
 }
 
@@ -31,6 +32,7 @@ function getPadInfo(){
         url: "data/PadInfo.csv",
         dataType: "text",
         success: function(data) {
+            
             processData(data);
         }
     });
