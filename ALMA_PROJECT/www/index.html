@@ -14,9 +14,9 @@
 		<script src="js/jquery/jquery-1.10.2.min.js"></script> 
 		<script src="js/jquery/jquery.mobile-1.4.2.min.js"></script> 
 
-		<!-- Bootstrap 3 -->
+		<!-- Bootstrap 3 
 		<link href="css/bootstrap.css" rel="stylesheet"> 
-		<script src="js/bootstrap.js" rel="text/javascript"></script>
+		<script src="js/bootstrap.js" rel="text/javascript"></script>-->
 		
 		<!-- UNDERSCORE -->
 		<script src="js/underscore-min.js" rel="text/javascript"></script>
@@ -25,6 +25,7 @@
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 		
 		<!-- APP -->
+		<script src="js/gui.js" rel="text/javascript"></script>
 		<script src="js/cargas.js" rel="text/javascript"></script>
 		<link href="css/space.css" rel="stylesheet">   
 		<script src="js/space.js" rel="text/javascript"></script>
@@ -42,14 +43,23 @@
 
 	</head>
 	<body>
-		<div data-role="header" data-theme="b">
-			<h5 style="white-space: normal;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
+		<div data-role="page" id="home">
+			<div data-role="header" data-theme="b" class="headerConf">
+				<h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
+				<button href="#page2" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right">bars</button>
+			</div>
+			<div data-role="content">
+				<div id="box_mapa"></div>
+			</div>
 		</div>
-		<div data-role="content">
-			<div id="box_mapa"></div>
-			<div id="barDown">
-				<a data-role="button" data-inline="true" class="btnDer">Boton 1</a>
-				<a data-role="button" data-inline="true" class="btnIzq">Boton 2</a>
+		
+		<div data-role="page" id="page2">
+			<div data-role="header" data-theme="b" class="headerConf">
+				<h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
+				<button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right">bars</button>
+			</div>
+			<div data-role="content">
+				
 			</div>
 		</div>
 
