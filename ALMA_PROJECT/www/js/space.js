@@ -20,6 +20,17 @@ $(document).ready(function() {
 	//BuscarUbicacion();
 	
 	
+	var latlng = new google.maps.LatLng(-23.02336414219032, -67.75367796421051);
+    
+	// Marcador
+	var marcadorHome = 
+	  new google.maps.Marker({
+	    position: latlng,
+	    map: map,
+	    icon: "https://cdn1.iconfinder.com/data/icons/super-mono-reflection/blue/home_blue.png"
+	  });
+
+	
 	/*
 		stop
 		start
