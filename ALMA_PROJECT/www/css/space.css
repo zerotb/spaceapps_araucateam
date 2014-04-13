@@ -8,3 +8,8 @@
 .headerConf{
 	min-height: 44px;
 }
+
+.box1 div{
+float: left;
+width: 73%;
+}
