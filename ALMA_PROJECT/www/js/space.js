@@ -19,14 +19,6 @@ $(document).ready(function() {
 	// Ubicamos al usuario
 	//BuscarUbicacion();
 	
-	var heigth = $('#box_mapa').height();
-	$('#barDown').css('margin-top', heigth-80);
-	
-	
-	$(window).resize(function() {
-		var heigth = $('#box_mapa').height();
-		$('#barDown').css('margin-top', heigth-80);
-	});
 	
 	/*
 		stop
