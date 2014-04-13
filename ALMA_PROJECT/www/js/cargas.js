@@ -85,7 +85,7 @@ function getOperational(){
         dataType: "xml",
         success: function(xml) {
             
-            console.log(xml);
+            //console.log(xml);
 
             var json = $.xml2json(xml);
 
