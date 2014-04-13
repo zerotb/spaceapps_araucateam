@@ -6,6 +6,7 @@ var xml;
 var listadoAntenas = [];
 
 
+
 // Procesamos el texto plano, convirtiéndolo a objeto
 function processData(allText) {
     
@@ -21,10 +22,8 @@ function processData(allText) {
             for (var j=0; j<headers.length; j++) {
                 
                 antena[headers[j]] = data[j];
-                
-
-            }
             
+            }
 
             // TODO: si header[0] (que indica que la antena está 
             // en el pad debemos agregarla), de lo contrario no.
