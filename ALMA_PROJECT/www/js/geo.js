@@ -1,9 +1,10 @@
+
 var nav = null;
 var watchID;
 var geoloc;
 var marcadorUsuario = null;
 var antenas = [];
-var checkList = [];
+var checkList = new Object();
 
 function BuscarUbicacion() {
 
@@ -76,9 +77,9 @@ function BuscarUbicacion() {
 // Inicializamos el punto de origen (Technical Building)
 var base = new Object();
     base["Antenna"] = "base";
-    base["Latitude"] = "-23.02336414219032";
-    base["Longitude"] = "-67.75367796421051";
-    base["Height"] = "5074.88584582601";
+    base["Latitude"] = -23.02336414219032;
+    base["Longitude"] = -67.75367796421051;
+    base["Height"] = 5074.88584582601;
 
 // TODO: MODIFICAR A LISTADO DE ÁLVARO
 checkList.push(base);
@@ -146,8 +147,8 @@ function MenorDistancia(punto, arreglo){
 function getDistanceFromLatLonInMts(lat1,lon1,lat2,lon2) {
   
   var R = 6371 * 1000; // Radio de la tierra en metros
-  var dLat = deg2rad(parseFloat(lat2)-parseFloat(lat1));  // deg2rad below
-  var dLon = deg2rad(parseFloat(lon2)-parseFloat(lon1)); 
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
   var a = 
     Math.sin(dLat/2) * Math.sin(dLat/2) +
     Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
@@ -277,3 +278,4 @@ function cargarAntenas(){
   });
 
 }
+
