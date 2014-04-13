@@ -5,9 +5,13 @@ function cargaLista(){
 	var salida = 
 		'<ul id="listaA" data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true">';
 		for(i=0; i<listadoAntenas.length; i++){
-			salida +=
-				'<input type="checkbox" name="checkbox'+i+'" id="checkbox'+i+'" num="'+ i +'">'+
-				'<label for="checkbox'+i+'" data-inset="false" >'+ listadoAntenas[i].Antenna +'</label>';
+
+			if(listadoAntenas[i].Antenna != "base")
+			{
+				salida +=
+					'<input type="checkbox" name="checkbox'+i+'" id="checkbox'+i+'" num="'+ i +'">'+
+					'<label for="checkbox'+i+'" data-inset="false" >'+ listadoAntenas[i].Antenna +'</label>';
+			}
 		}
 
 	salida += '</ul>';
