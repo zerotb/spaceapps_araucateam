@@ -34,6 +34,7 @@ function processData(allText) {
        }
    }
    
+   getOperational();
 
 }
 

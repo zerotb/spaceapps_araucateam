@@ -6,6 +6,7 @@ var marcadorUsuario = null;
 var antenas = [];
 var checkList = [];
 var recorridoPlan;
+var marcadorAntenaMasCerca = null;
 
 var listadoMarcadores = new Array();
 
@@ -177,6 +178,34 @@ function MenorDistancia(punto, arreglo, limpiar){
 
 }
 
+
+function MenorDistanciaAntenaUsuario(punto){
+
+  // Obtenemos la distancia mínima desde el punto a los items del arreglo
+  var min = _.min(listadoAntenas, function(item) {
+
+    return getDistanceFromLatLonInMts(punto.lat(), punto.lng(), 
+                            item.Latitude, item.Longitude);
+    
+  });
+
+  var latlng = new google.maps.LatLng(min.Latitude, min.Longitude);
+
+    
+  // Marcador
+  marcadorAntenaMasCerca = 
+    new google.maps.Marker({
+    position: latlng,
+    map: map,
+    icon: "img/antena_usuario.png"
+  });
+
+  listadoMarcadores.push(marcadorAntenaMasCerca);
+
+
+
+}
+
 function getDistanceFromLatLonInMts(lat1,lon1,lat2,lon2) {
   
   var R = 6371 * 1000; // Radio de la tierra en metros
@@ -208,6 +237,9 @@ function showLocation(position) {
 
   var latlng = new google.maps.LatLng(usrLat, usrLong);
 
+  // Muestra la antena más cercana al usuario
+  MenorDistanciaAntenaUsuario(latlng);
+
   if(marcadorUsuario == null){
     
     // Marcador
@@ -218,7 +250,7 @@ function showLocation(position) {
       icon: "https://wiki.openmrs.org/images/icons/profilepics/Avatar-14.png"
       });
 
-    map.setCenter(latlng);
+    //map.setCenter(latlng);
     //map.setZoom(16);
 
   }
