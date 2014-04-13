@@ -79,24 +79,65 @@ var base = new Object();
     base["Longitude"] = -67.75367796421051;
     base["Height"] = 5074.88584582601;
 
+// TODO: MODIFICAR A LISTADO DE ÁLVARO
 listadoAntenas.push(base);
+
+// Coordenadas de recorrido
+var recorridoCoordenadas = [];
+
+var listadoRecorrido = new Array();
+listadoRecorrido.push(base);
+
 
 function MenorDistancia(punto, arreglo){
 
   // Obtenemos la distancia mínima desde el punto a los items del arreglo
   var min = _.min(arreglo, function(item) {
 
-
     if(item["Antenna"] != punto["Antenna"]){
-      
-      console.log(item.Latitude);
 
       return getDistanceFromLatLonInMts(punto.Latitude, punto.Longitude, 
                               item.Latitude, item.Longitude);
     }
+
   });
 
-  console.log(min);
+  // Eliminamos el punto del listado de antenas
+  var index = listadoAntenas.indexOf(punto);
+  if (index > -1) {
+    listadoAntenas.splice(index, 1);
+  }
+
+  // Llamamos recursivamente a la función
+  if(listadoAntenas.length > 0){
+    listadoRecorrido.push(min);
+    MenorDistancia(min, listadoAntenas);
+    placeAntenna(min); // WENA iCARLY! xD
+  }
+  else
+  {
+    console.log("pasó");
+
+    // Agregamos los items
+    $.each(listadoRecorrido, function(i, item){
+
+      // Agregamos las coordenadas del punto para luego dibujar la línea de la trayectoria
+      recorridoCoordenadas.push(new google.maps.LatLng(item.Latitude, item.Longitude));
+
+    });
+
+    // Finalmente dibujamos el recorrido
+    var recorridoPlan = new google.maps.Polyline({
+      path: recorridoCoordenadas,
+      geodesic: true,
+      strokeColor: '#FF0000',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
+
+    // Asignamos el mapa
+    recorridoPlan.setMap(map);
+  }
 
 }
 
@@ -156,8 +197,8 @@ function showLocation(position) {
 
 function placeAntenna(antena) {
 
-  usrLat = antena.lat;
-  usrLong = antena.long;
+  usrLat = antena.Latitude;
+  usrLong = antena.Longitude;
 
 
   var latlng = new google.maps.LatLng(usrLat, usrLong);
