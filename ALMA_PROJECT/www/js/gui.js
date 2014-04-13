@@ -20,6 +20,8 @@ function cargaLista(){
 	$.mobile.loading( "hide" );
 	$("#page2").page();
 
+	$('#page2').trigger('create');
+
 }
 
 
@@ -30,13 +32,13 @@ function obtenerPuntos(){
 		//console.log( $('#checkbox'+i).attr('data-cacheval') );
 
 		if( $('#checkbox'+i).attr('data-cacheval') == "false" ){
-			var n = parseInt($('#checkbox'+1).attr('num'))
+			var n = parseInt($('#checkbox'+i).attr('num'))
 			checkList.push(listadoAntenas[n]);
 			x++;	
 		}
 		
 	}
 
-	MenorDistancia(base, checkList);
+	MenorDistancia(base, checkList, true);
 	$.mobile.navigate( "#home" );
 }

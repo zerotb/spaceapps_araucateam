@@ -5,6 +5,7 @@ var geoloc;
 var marcadorUsuario = null;
 var antenas = [];
 var checkList = [];
+var recorridoPlan;
 
 function BuscarUbicacion() {
 
@@ -106,15 +107,15 @@ function MenorDistancia(punto, arreglo){
   });
 
   // Eliminamos el punto del listado de antenas
-  var index = arreglo.indexOf(punto);
+  var index = checkList.indexOf(punto);
   if (index > -1) {
-    arreglo.splice(index, 1);
+    checkList.splice(index, 1);
   }
 
   // Llamamos recursivamente a la función
-  if(arreglo.length > 0){
+  if(checkList.length > 0){
     listadoRecorrido.push(min);
-    MenorDistancia(min, arreglo);
+    MenorDistancia(min, checkList);
     placeAntenna(min); // WENA iCARLY! xD
   }
   else
@@ -130,7 +131,7 @@ function MenorDistancia(punto, arreglo){
     });
 
     // Finalmente dibujamos el recorrido
-    var recorridoPlan = new google.maps.Polyline({
+    recorridoPlan = new google.maps.Polyline({
       path: recorridoCoordenadas,
       geodesic: true,
       strokeColor: '#FF0000',
