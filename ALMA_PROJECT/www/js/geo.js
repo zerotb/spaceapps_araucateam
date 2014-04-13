@@ -3,6 +3,7 @@ var watchID;
 var geoloc;
 var marcadorUsuario = null;
 var antenas = [];
+var checkList = new Object();
 
 function BuscarUbicacion() {
 
@@ -80,7 +81,7 @@ var base = new Object();
     base["Height"] = 5074.88584582601;
 
 // TODO: MODIFICAR A LISTADO DE ÁLVARO
-listadoAntenas.push(base);
+checkList.push(base);
 
 // Coordenadas de recorrido
 var recorridoCoordenadas = [];
@@ -104,15 +105,15 @@ function MenorDistancia(punto, arreglo){
   });
 
   // Eliminamos el punto del listado de antenas
-  var index = listadoAntenas.indexOf(punto);
+  var index = arreglo.indexOf(punto);
   if (index > -1) {
-    listadoAntenas.splice(index, 1);
+    arreglo.splice(index, 1);
   }
 
   // Llamamos recursivamente a la función
-  if(listadoAntenas.length > 0){
+  if(arreglo.length > 0){
     listadoRecorrido.push(min);
-    MenorDistancia(min, listadoAntenas);
+    MenorDistancia(min, arreglo);
     placeAntenna(min); // WENA iCARLY! xD
   }
   else

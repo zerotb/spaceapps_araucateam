@@ -22,7 +22,7 @@ function cargaLista(){
 
 }
 
-var checkList = new Object();
+
 
 function obtenerPuntos(){
 	var x=0;
