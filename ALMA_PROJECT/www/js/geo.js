@@ -88,7 +88,8 @@ var recorridoCoordenadas = [];
 var listadoRecorrido = new Array();
 listadoRecorrido.push(base);
 
-
+// Cálculo de la menor distancia entre un punto de origen dado y el resto de los
+// elemento de un arreglo (los que se van eliminando a medida que son recorridos)
 function MenorDistancia(punto, arreglo){
 
   // Obtenemos la distancia mínima desde el punto a los items del arreglo
