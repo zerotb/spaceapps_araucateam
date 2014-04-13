@@ -5,6 +5,7 @@ $(document).ready(function() {
 	
 	getPadInfo();
 	
+
 	// Config del mapa
 	var mapOptions = {
 		// AOS Technical Building Geographic LAT LONG
@@ -30,7 +31,7 @@ $(document).ready(function() {
 	    icon: "https://cdn1.iconfinder.com/data/icons/super-mono-reflection/blue/home_blue.png"
 	  });
 
-	
+
 	/*
 		stop
 		start
