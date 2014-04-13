@@ -283,18 +283,34 @@ function placeAntenna(antena) {
   //if(marcador == null){
     
     // Marcador
+    
     var marcador = 
       new google.maps.Marker({
       position: latlng,
       map: map,
       icon: "img/antenna.png"
       });
+    
+
+    
+  var etiqueta = new MarkerWithLabel({
+     position: latlng,
+     map: map,
+     icon: "img/antenna.png",
+     labelContent: antena.Antenna,
+     labelAnchor: new google.maps.Point(22, 0),
+     labelClass: "labels" // the CSS class for the label
+   });
+
+  
 
     map.setCenter(latlng);
 
     antenas.push(marcador);
 
     listadoMarcadores.push(marcador);
+    listadoMarcadores.push(etiqueta);
+
 
     //map.setZoom(16);
 /*
