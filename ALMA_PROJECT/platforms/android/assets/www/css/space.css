@@ -1,22 +1,23 @@
-body{ 
-	width: 100%; 
-	height: 100%;
-}
-
 #box_mapa { 
 	height: 88%;
     
     position: absolute;
-    width: 98%;
+    width: 100%;
 }
 
-.barDown{
-
+.headerConf{
+	min-height: 44px;
 }
 
-.btnIzq{
-	margin-left: 22px;
+
+.box1 div{
+float: left;
+width: 73%;
 }
-.btnDer{
-	float: right;
+
+
+.ui-content
+{
+	padding: 0px;
 }
+
