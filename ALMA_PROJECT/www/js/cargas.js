@@ -21,7 +21,7 @@ function processData(allText) {
 
             for (var j=0; j<headers.length; j++) {
                 
-                antena[headers[j]] = data[j];
+                antena[headers[j]] = ""+data[j];
                 
 
             }
@@ -45,24 +45,55 @@ function getOperational(){
         url: "data/operational.xml",
         dataType: "xml",
         success: function(xml) {
-          
+            
+            console.log(xml);
+
+            var json = $.xml2json(xml);
+
+            //console.log(json.Debug[0].text);
+            
+            for (var j = 0; j <= listadoAntenas.length-1; j++) {
+                listadoAntenas[j].HW = [];
+            
+                $.each(json.Debug,function (i, item) {
+                  //console.log("->"+item.id);
+                  //console.log(listadoAntenas[j].Antenna);
+                  if(item.SourceObject.split("/")[1] == listadoAntenas[j].Antenna){
+                      //console.log(listadoAntenas[j].Antenna);
+                      var str = item.text.split(",");
+                      str = str[1].split(" ");
+                      //console.log(str);
+                      listadoAntenas[j].HW.push( {"name": str[1], "status": str[2], "time": item.TimeStamp});
+
+
+                  }
+
+
+
+                });
+
+            };
+            
+
+/*
+            var $xml = $(xmlDoc);
             // Obtenemos los items "Debug" del XML 
-            xmlDebug = $(xml).find("Debug");
+            $xmlDebug = $xml.find("Debug");
 
             // Filtramos aquellos que el id corresponda al de una antena
-            itemsDebug = $(xmlDebug).filter(function(){
+            $itemsDebug = $xmlDebug.filter(function(){
 
                 // Si el string que identifica la antena está en el atributo "SourceObject"
                 if($(this).attr('SourceObject').indexOf("CM05") >= 0)
                   return this;
             });
 
-            //console.log(itemsDebug);
+            console.log($itemsDebug);
 
             $.each(itemsDebug, function(i, item){
               //console.log(item.);
             });
-
+*/
         },
         error: function (xhr, ajaxOptions, thrownError) {
             console.log(xhr.status);
@@ -86,6 +117,7 @@ function getPadInfo(){
     });
 }
 
+/*
 function getOperational(){
     $.ajax({
         type: "GET",
@@ -96,4 +128,4 @@ function getOperational(){
         }
     });
 }
-
+*/
