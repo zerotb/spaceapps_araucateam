@@ -47,9 +47,10 @@
     </head>
     <body>
     <div data-role="page" id="home">
-            <div data-role="header" data-theme="b" class="headerConf">
-                <h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
-                <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right" onclick="cargaLista();">bars</a>
+            <div data-role="header" data-theme="b" class="headerConf" style="background-color: #003d77;text-align: center;">
+                <!--<h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>-->
+                <img src="img/header_app.png" />
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-check ui-btn-icon-notext ui-btn-right" onclick="cargaLista();">bars</a>
             </div>
             <div data-role="content">
                 <div id="box_mapa"></div>
@@ -57,12 +58,13 @@
         </div>
         
         <div data-role="page" id="page2">
-            <div data-role="header" data-theme="b" class="headerConf">
-                <h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
+             <div data-role="header" data-theme="b" class="headerConf" style="background-color: #003d77;text-align: center;">
+                <!--<h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>-->
+                <img src="img/header_app.png" />
                 <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l ui-btn-icon-notext ui-btn-left">bars</a>
-                <a data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-bars ui-btn-right" onclick="obtenerPuntos();">Ruta</a>
+                <a data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-check ui-btn-right" onclick="obtenerPuntos();">Ruta</a>
             </div>
-            <div data-role="content">
+            <div data-role="content" style="padding: 0px 10px;background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #003D77), color-stop(1, #5585B3));background-image: -webkit-linear-gradient(bottom, #003D77 0%, #5585B3 100%);">
                 <div id="listaAntena"></div>
             </div>
         </div>
