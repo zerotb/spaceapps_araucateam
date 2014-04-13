@@ -49,7 +49,7 @@
     <div data-role="page" id="home">
             <div data-role="header" data-theme="b" class="headerConf">
                 <h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
-                <a data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right" onclick="cargaLista();">bars</a>
+                <a class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right" onclick="cargaLista();">bars</a>
             </div>
             <div data-role="content">
                 <div id="box_mapa"></div>
@@ -59,13 +59,21 @@
         <div data-role="page" id="page2">
             <div data-role="header" data-theme="b" class="headerConf">
                 <h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
-                <a href="#home" data-direction="reverse" data-transition="slide"class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l ui-btn-icon-notext ui-btn-left">bars</a>
-                <a data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-bars ui-btn-right" onclick="obtenerPuntos();">Ruta</a>
+                <a href="#home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l ui-btn-icon-notext ui-btn-left">bars</a>
+                <a data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-bars ui-btn-right" onclick="obtenerPuntos();">Ruta</a>
             </div>
             <div data-role="content">
                 <div id="listaAntena"></div>
             </div>
         </div>
-
+        
+        <div data-role="page" id="dialogo" data-dialog="true">
+            <div data-role="header" data-theme="b" class="headerConf">
+                <h5 style="white-space: normal; font-size: small;">Detalle</h5>
+            </div>
+            <div data-role="content">
+                <div id="detalleAntena"></div>
+            </div>
+        </div>
     </body>
 </html>

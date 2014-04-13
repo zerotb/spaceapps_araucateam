@@ -39,6 +39,12 @@ function obtenerPuntos(){
 		
 	}
 
-	MenorDistancia(base, checkList, true);
-	$.mobile.navigate( "#home" );
+	if(checkList.length >= 2){
+		MenorDistancia(base, checkList, true);
+		$.mobile.navigate( "#home" );
+	}
+	else{
+		alert("Debe al menos exitir una antena seleccionada");
+	}
+	
 }
