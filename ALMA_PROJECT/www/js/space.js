@@ -17,7 +17,7 @@ $(document).ready(function() {
 	map = new google.maps.Map(document.getElementById("box_mapa"), mapOptions);
 
 	// Ubicamos al usuario
-	BuscarUbicacion();
+	//BuscarUbicacion();
 	
 	
 	/*

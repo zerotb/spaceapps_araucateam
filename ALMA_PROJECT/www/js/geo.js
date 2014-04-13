@@ -4,7 +4,7 @@ var watchID;
 var geoloc;
 var marcadorUsuario = null;
 var antenas = [];
-var checkList = new Object();
+var checkList = [];
 
 function BuscarUbicacion() {
 
