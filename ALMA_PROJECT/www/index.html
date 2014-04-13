@@ -43,10 +43,10 @@
 
 	</head>
 	<body>
-		<div data-role="page" id="home">
+	<div data-role="page" id="home">
 			<div data-role="header" data-theme="b" class="headerConf">
 				<h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
-				<a href="#page2" data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right">bars</a>
+				<a data-transition="slide" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars ui-btn-icon-notext ui-btn-right" onclick="cargaLista();">bars</a>
 			</div>
 			<div data-role="content">
 				<div id="box_mapa"></div>
@@ -57,15 +57,10 @@
 			<div data-role="header" data-theme="b" class="headerConf">
 				<h5 style="white-space: normal; font-size: small;">Geo-Localizaci&oacute;n de Antenas para Tareas de Mantenimiento</h5>
 				<a href="#home" data-direction="reverse" data-transition="slide"class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l ui-btn-icon-notext ui-btn-left">bars</a>
+				<a data-transition="slide" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-bars ui-btn-right" onclick="obtenerPuntos();">Ruta</a>
 			</div>
 			<div data-role="content">
-				<ul data-role="listview" data-filter="true" data-filter-placeholder="Buscar..." data-inset="true">
-				    <input type="checkbox" name="checkbox1" id="checkbox1" checked=""><label for="checkbox1" data-inset="false" >Manzana</label>
-				    <input type="checkbox" name="checkbox2" id="checkbox2" checked=""><label for="checkbox2" data-inset="false" >Apple</label>
-				    <input type="checkbox" name="checkbox3" id="checkbox3" checked=""><label for="checkbox3" data-inset="false" >Naranja</label>
-				    <input type="checkbox" name="checkbox4" id="checkbox4" checked=""><label for="checkbox4" data-inset="false" >Zanahoria</label>
-				    <input type="checkbox" name="checkbox5" id="checkbox5" checked=""><label for="checkbox5" data-inset="false" >Tomate</label>
-				</ul>	
+				<div id="listaAntena"></div>
 			</div>
 		</div>
 
