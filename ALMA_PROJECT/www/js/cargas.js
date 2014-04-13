@@ -20,7 +20,7 @@ function processData(allText) {
 
             for (var j=0; j<headers.length; j++) {
                 
-                antena[headers[j]]=+data[j];
+                antena[headers[j]] = data[j];
                 
 
             }
