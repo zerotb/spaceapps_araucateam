@@ -109,6 +109,8 @@ var recorridoCoordenadas = [];
 var listadoRecorrido = new Array();
 listadoRecorrido.push(base);
 
+var checkList2 = [];
+
 // Cálculo de la menor distancia entre un punto de origen dado y el resto de los
 // elemento de un arreglo (los que se van eliminando a medida que son recorridos)
 function MenorDistancia(punto, arreglo, limpiar){
@@ -121,6 +123,9 @@ function MenorDistancia(punto, arreglo, limpiar){
 
   if(limpiar)
   {
+
+    checkList2.length = 0;
+    checkList2 = checkList.slice();
 
     map.clearOverlays();
 
@@ -188,7 +193,7 @@ function MenorDistancia(punto, arreglo, limpiar){
 function MenorDistanciaAntenaUsuario(punto){
 
   // Obtenemos la distancia mínima desde el punto a los items del arreglo
-  var min = _.min(listadoAntenas, function(item) {
+  var min = _.min(checkList2, function(item) {
 
     return getDistanceFromLatLonInMts(punto.lat(), punto.lng(), 
                             item.Latitude, item.Longitude);
@@ -253,7 +258,7 @@ function showLocation(position) {
       new google.maps.Marker({
       position: latlng,
       map: map,
-      icon: "https://wiki.openmrs.org/images/icons/profilepics/Avatar-14.png"
+      icon: "img/user.png"
       });
 
     //map.setCenter(latlng);
@@ -282,7 +287,7 @@ function placeAntenna(antena) {
       new google.maps.Marker({
       position: latlng,
       map: map,
-      icon: "http://png-3.findicons.com/files/icons/2218/comfi_telecom/32/antenna.png"
+      icon: "img/antenna.png"
       });
 
     map.setCenter(latlng);
