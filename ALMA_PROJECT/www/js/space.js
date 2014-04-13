@@ -18,7 +18,7 @@ $(document).ready(function() {
 	map = new google.maps.Map(document.getElementById("box_mapa"), mapOptions);
 
 	// Ubicamos al usuario
-	//BuscarUbicacion();
+	BuscarUbicacion();
 	
 	
 	var latlng = new google.maps.LatLng(-23.02336414219032, -67.75367796421051);
