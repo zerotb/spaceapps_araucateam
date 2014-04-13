@@ -72,7 +72,7 @@ function getOperational(){
 }
 
 
-// ajax para obtener archvio CSV
+//ajax para obtener archvio CSV
 function getPadInfo(){
     $.ajax({
         type: "POST",
@@ -80,4 +80,18 @@ function getPadInfo(){
         dataType: "text",
         success: function(data) {
             
-      
+            processData(data);
+        }
+    });
+}
+
+function getOperational(){
+    $.ajax({
+        type: "GET",
+        url: "data/operational.xml",
+        dataType: "xml",
+        success: function(data) {
+            xml = data.find("Log");
+        }
+    });
+}
