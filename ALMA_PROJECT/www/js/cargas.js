@@ -4,7 +4,7 @@ var operational;
 var xml;
 
 var listadoAntenas = [];
-
+var listadoPads = [];
 
 
 // Procesamos el texto plano, convirtiéndolo a objeto
@@ -18,21 +18,33 @@ function processData(allText) {
        if (data.length == headers.length) {
 
            var antena = new Object();
+           var pad = new Object();
 
            for (var j=0; j<headers.length; j++) {
 
                if(data[0] != ""){
                    antena[headers[j]] = data[j];
-               } 
+               }
+               else
+               {
+                  pad[headers[j]] = data[j];
+               }
 
            }
 
            if(data[0] != ""){
                listadoAntenas.push(antena);
            }
+           else
+           {
+              listadoPads.push(pad);
+           }
 
        }
    }
+   
+   cargarPadsInicio();
+   cargarAntenasInicio();
    
    getOperational();
 

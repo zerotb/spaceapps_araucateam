@@ -8,6 +8,8 @@ var checkList = [];
 var recorridoPlan;
 var marcadorAntenaMasCerca = null;
 
+var marcadoresInicio = new Array();
+
 var listadoMarcadores = new Array();
 
 // Permite eliminar todos los marcadores del mapa
@@ -15,10 +17,18 @@ google.maps.Map.prototype.clearOverlays = function() {
   
   for (var i = 0; i < listadoMarcadores.length; i++ ) {
     listadoMarcadores[i].setMap(null);
+
+  }
+
+  for (var i = 0; i < marcadoresInicio.length; i++ ) {
+    marcadoresInicio[i].setMap(null);
+    
   }
   
   // Limpiamos el arreglo
   listadoMarcadores.length = 0;
+
+  marcadoresInicio.length = 0;
   
 }
 
@@ -156,7 +166,7 @@ function MenorDistancia(punto, arreglo, limpiar){
   if(checkList.length > 0){
     listadoRecorrido.push(min);
     MenorDistancia(min, checkList);
-    placeAntenna(min); // WENA iCARLY! xD
+    placeAntenna(min, "img/antenna.png"); // WENA iCARLY! xD
   }
   else
   {
@@ -272,7 +282,12 @@ function showLocation(position) {
 
 }
 
-function placeAntenna(antena) {
+function placeAntenna(antena, icono) {
+
+  if(!icono)
+  {
+    icono = "img/antenna.png";
+  }
 
   usrLat = antena.Latitude;
   usrLong = antena.Longitude;
@@ -284,12 +299,12 @@ function placeAntenna(antena) {
     
     // Marcador
     
-    var marcador = 
-      new google.maps.Marker({
-      position: latlng,
-      map: map,
-      icon: "img/antenna.png"
-      });
+  var marcador = 
+    new google.maps.Marker({
+    position: latlng,
+    map: map,
+    icon: icono
+    });
     
 
     
@@ -323,6 +338,38 @@ function placeAntenna(antena) {
 }
 
 
+function placeAntennaInicio(antena, icono) {
+
+  usrLat = antena.Latitude;
+  usrLong = antena.Longitude;
+
+  var latlng = new google.maps.LatLng(usrLat, usrLong);
+    
+  var marcador = 
+    new google.maps.Marker({
+    position: latlng,
+    map: map,
+    icon: icono
+    });
+    
+  var etiqueta = new MarkerWithLabel({
+     position: latlng,
+     map: map,
+     icon: "img/antenna.png",
+     labelContent: antena.Antenna,
+     labelAnchor: new google.maps.Point(22, 0),
+     labelClass: "labels" // the CSS class for the label
+   });
+
+  map.setCenter(latlng);
+
+  marcadoresInicio.push(marcador);
+  marcadoresInicio.push(etiqueta);
+
+    
+}
+
+
 // Trap a GPS error, log it to console and display on site
 function errorCallback(error) {
     
@@ -339,6 +386,33 @@ function errorCallback(error) {
 function clearWatch(watchID) {
     window.navigator.geolocation.clearWatch(watchID);
 }
+
+function cargarPadsInicio(){
+
+  $.each(listadoPads,function (i, antena) {
+    //console.log("->"+item.id);
+    
+    placeAntennaInicio(antena, "img/alma_base.png");
+
+  });
+
+}
+
+function cargarAntenasInicio(){
+
+ 
+  $.each(listadoAntenas,function (i, antena) {
+    //console.log("->"+item.id);
+    //var antena = {"lat":item.Latitude,"long":item.Longitude};
+    placeAntennaInicio(antena, "img/antenna.png");
+
+  });
+
+
+
+}
+
+
 
 
 function cargarAntenas(){
@@ -363,12 +437,14 @@ function cargarAntenas(){
   */
 
  
-  $.each(listadoAntenas,function (i, item) {
+  $.each(listadoAntenas,function (i, antena) {
     //console.log("->"+item.id);
-    var antena = {"lat":item.Latitude,"long":item.Longitude};
-    placeAntenna(antena);
+    //var antena = {"lat":item.Latitude,"long":item.Longitude};
+    placeAntenna(antena, "img/antenna.png");
 
   });
+
+
 
 }
 
