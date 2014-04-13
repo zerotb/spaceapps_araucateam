@@ -1,0 +1,28 @@
+.body{
+
+	height: 92%;
+}
+
+#box_mapa { 
+    
+    position: absolute;
+    width: 100%;
+    height: 98%;
+}
+
+.headerConf{
+	min-height: 44px;
+}
+
+
+.box1 div{
+float: left;
+width: 73%;
+}
+
+
+.ui-content
+{
+	padding: 0px;
+}
+
