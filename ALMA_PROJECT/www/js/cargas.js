@@ -37,7 +37,7 @@ function processData(allText) {
 
 }
 
-
+/*
 var itemsDebug;
 function getOperational(){
 
@@ -71,6 +71,56 @@ function getOperational(){
        }
    });
    return true;
+}
+*/
+
+var itemsDebug;
+function getOperational(){
+
+
+    $.ajax({
+        type: "GET",
+        url: "data/operational.xml",
+        dataType: "xml",
+        success: function(xml) {
+            
+            console.log(xml);
+
+            var json = $.xml2json(xml);
+
+            //console.log(json.Debug[0].text);
+            
+            for (var j = 0; j <= listadoAntenas.length-1; j++) {
+                listadoAntenas[j].HW = [];
+            
+                $.each(json.Debug,function (i, item) {
+                  //console.log("->"+item.id);
+                  //console.log(listadoAntenas[j].Antenna);
+                  if(item.SourceObject.split("/")[1] == listadoAntenas[j].Antenna){
+                      //console.log(listadoAntenas[j].Antenna);
+                      var str = item.text.split(",");
+                      str = str[1].split(" ");
+                      //console.log(str);
+                      listadoAntenas[j].HW.push( {"name": str[1], "status": str[2], "time": item.TimeStamp});
+
+
+                  }
+
+
+
+                });
+
+            };
+          
+
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status);
+            console.log(thrownError);
+        }
+    });
+    return true;
+
 }
 
 

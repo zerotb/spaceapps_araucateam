@@ -31,7 +31,7 @@ function obtenerPuntos(){
 
 		if( $('#checkbox'+i).attr('data-cacheval') == "false" ){
 			var n = parseInt($('#checkbox'+1).attr('num'))
-			checkList[x] =  listadoAntenas[n];
+			checkList.push(listadoAntenas[n]);
 			x++;	
 		}
 		
