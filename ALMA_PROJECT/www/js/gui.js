@@ -8,7 +8,7 @@ if(listadoAntenas[i].Antenna != "base")
 {
 salida +=
 '<input type="checkbox" name="checkbox'+i+'" id="checkbox'+i+'" num="'+ i +'">'+
-'<a  class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-right" style="float: right; width: 20%;" onclick="detalleAntena('+i+');">Hardware</a>'+
+'<a  class="ui-btn ui-shadow ui-corner-all ui-icon-gear ui-btn-icon-notext" style="float: left;margin:15px;" onclick="detalleAntena('+i+');"></a>'+
 '<label for="checkbox'+i+'" data-inset="false" >'+ listadoAntenas[i].Antenna +'</label>';
 }
 }
@@ -37,8 +37,8 @@ x++;
 }
 
 if(checkList.length >= 2){
-MenorDistancia(base, checkList, true);
-$.mobile.navigate( "#home" );
+	MenorDistancia(base, checkList, true);
+	$.mobile.navigate( "#home" );
 }
 else{
 alert("Debe al menos exitir una antena seleccionada");
