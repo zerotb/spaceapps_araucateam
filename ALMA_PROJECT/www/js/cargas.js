@@ -19,13 +19,17 @@ function processData(allText) {
             var antena = new Object();
 
             for (var j=0; j<headers.length; j++) {
-            	
-            	antena[headers[j]]=+data[j];
                 
+                if(data[0] != ""){
+                    antena[headers[j]]=+""+data[j];
+                } 
 
             }
             
-            listadoAntenas.push(antena);
+            if(data[0] != ""){
+                listadoAntenas.push(antena);
+            }
+            
         }
     }
     
