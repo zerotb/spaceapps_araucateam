@@ -7,6 +7,20 @@ var antenas = [];
 var checkList = [];
 var recorridoPlan;
 
+var listadoMarcadores = new Array();
+
+// Permite eliminar todos los marcadores del mapa
+google.maps.Map.prototype.clearOverlays = function() {
+  
+  for (var i = 0; i < listadoMarcadores.length; i++ ) {
+    listadoMarcadores[i].setMap(null);
+  }
+  
+  // Limpiamos el arreglo
+  listadoMarcadores.length = 0;
+  
+}
+
 function BuscarUbicacion() {
 
   if (nav == null) {
@@ -82,7 +96,10 @@ var base = new Object();
     base["Longitude"] = -67.75367796421051;
     base["Height"] = 5074.88584582601;
 
-// TODO: MODIFICAR A LISTADO DE ÁLVARO
+
+
+
+// 
 checkList.push(base);
 
 // Coordenadas de recorrido
@@ -93,7 +110,18 @@ listadoRecorrido.push(base);
 
 // Cálculo de la menor distancia entre un punto de origen dado y el resto de los
 // elemento de un arreglo (los que se van eliminando a medida que son recorridos)
-function MenorDistancia(punto, arreglo){
+function MenorDistancia(punto, arreglo, limpiar){
+
+  if(limpiar)
+  {
+
+    map.clearOverlays();
+
+    listadoRecorrido.length = 0;
+    listadoRecorrido.push(base);
+
+    recorridoCoordenadas.length = 0;
+  }
 
   // Obtenemos la distancia mínima desde el punto a los items del arreglo
   var min = _.min(arreglo, function(item) {
@@ -120,7 +148,6 @@ function MenorDistancia(punto, arreglo){
   }
   else
   {
-    console.log("pasó");
 
     // Agregamos los items
     $.each(listadoRecorrido, function(i, item){
@@ -141,6 +168,11 @@ function MenorDistancia(punto, arreglo){
 
     // Asignamos el mapa
     recorridoPlan.setMap(map);
+
+    listadoMarcadores.push(recorridoPlan);
+
+
+
   }
 
 }
@@ -173,8 +205,6 @@ function showLocation(position) {
 
   usrLat = position.coords.latitude;
   usrLong = position.coords.longitude;
-
-  console.log(position);
 
   var latlng = new google.maps.LatLng(usrLat, usrLong);
 
@@ -220,6 +250,9 @@ function placeAntenna(antena) {
     map.setCenter(latlng);
 
     antenas.push(marcador);
+
+    listadoMarcadores.push(marcador);
+
     //map.setZoom(16);
 /*
   }
@@ -270,7 +303,7 @@ function cargarAntenas(){
       });
   */
 
-  console.log(listadoAntenas);
+ 
   $.each(listadoAntenas,function (i, item) {
     //console.log("->"+item.id);
     var antena = {"lat":item.Latitude,"long":item.Longitude};
