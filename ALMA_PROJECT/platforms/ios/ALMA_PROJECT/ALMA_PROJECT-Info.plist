@@ -16,6 +16,7 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>iPhone-icono-retina</string>
 				<string>alma-icono</string>
 				<string>icon-40</string>
 				<string>icon-small</string>
@@ -69,8 +70,20 @@
 	<string></string>
 	<key>NSMainNibFile~ipad</key>
 	<string></string>
+	<key>UILaunchImageFile</key>
+	<string>Default</string>
 	<key>UILaunchImages</key>
 	<array>
+		<dict>
+			<key>UILaunchImageMinimumOSVersion</key>
+			<string>7.0</string>
+			<key>UILaunchImageName</key>
+			<string>Default</string>
+			<key>UILaunchImageOrientation</key>
+			<string>Portrait</string>
+			<key>UILaunchImageSize</key>
+			<string>{320, 568}</string>
+		</dict>
 		<dict>
 			<key>UILaunchImageMinimumOSVersion</key>
 			<string>7.0</string>
