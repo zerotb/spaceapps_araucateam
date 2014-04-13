@@ -113,6 +113,12 @@ listadoRecorrido.push(base);
 // elemento de un arreglo (los que se van eliminando a medida que son recorridos)
 function MenorDistancia(punto, arreglo, limpiar){
 
+  setTimeout(function(){
+    // Fix bug mapa
+    google.maps.event.trigger(map,'resize');
+
+  }, 2000)
+
   if(limpiar)
   {
 
@@ -162,9 +168,9 @@ function MenorDistancia(punto, arreglo, limpiar){
     recorridoPlan = new google.maps.Polyline({
       path: recorridoCoordenadas,
       geodesic: true,
-      strokeColor: '#FF0000',
+      strokeColor: '#00B7FF',
       strokeOpacity: 1.0,
-      strokeWeight: 2
+      strokeWeight: 5
     });
 
     // Asignamos el mapa
