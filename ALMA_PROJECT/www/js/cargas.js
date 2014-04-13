@@ -109,6 +109,7 @@ function getOperational(){
 
 
                 });
+                listadoAntenas[j].HW = _.groupBy(listadoAntenas[j].HW, function(item){ return item.name; });
 
             };
           
