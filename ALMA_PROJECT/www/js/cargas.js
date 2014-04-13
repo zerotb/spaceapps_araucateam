@@ -5,13 +5,6 @@ var xml;
 
 var listadoAntenas = [];
 
-// Inicializamos el punto de origen (Technical Building)
-var base = new Object();
-    base["Antenna"] = "base";
-    base["Latitude"] = -23.02336414219032;
-    base["Longitude"] = -67.75367796421051;
-    base["Height"] = 5074.88584582601;
-
 
 
 // Procesamos el texto plano, convirtiéndolo a objeto
