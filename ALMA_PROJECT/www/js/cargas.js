@@ -137,13 +137,3 @@ function getPadInfo(){
    });
 }
 
-function getOperational(){
-   $.ajax({
-       type: "GET",
-       url: "data/operational.xml",
-       dataType: "xml",
-       success: function(data) {
-           xml = data.find("Log");
-       }
-   });
-}
