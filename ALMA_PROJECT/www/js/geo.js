@@ -35,58 +35,72 @@ function BuscarUbicacion() {
 // CÁLCULO DE DISTANCIAS
 //////////////////////////////////////////////////////////////////////////
 
-/*
-
-
-
-var map = {};
-
-      map["a"] = 2;
-
-      var graph = new Graph(map);
-
-      console.log(graph.findShortestPath('a', 'c'));
-*/
-
-// 
-
 // Necesitamos construir un objeto de este tipo:
 // var map = {a:{b:2,x:40,c:40},b:{c:40, x:2},x:{c:6}};
 
 // Para eso, inicializamos un Objeto que contrendrá todas las distancias
-var antenasDistancias = {};
+// var antenasDistancias = {};
 
-function calcularDistanciasEntreAntenas(){
+// function calcularDistanciasEntreAntenas(){
 
-  // Calculamos la distancia de cada antena hacia la otra
-  $.each(listadoAntenas, function(i1, item1){
+//   // Calculamos la distancia de cada antena hacia la otra
+//   $.each(listadoAntenas, function(i1, item1){
 
-    // Para cada antena, necestiamos crear un objeto {b:2,x:40,c:40}
-    // Inicializamos un objeto
-    var distancia = {};
+//     // Para cada antena, necestiamos crear un objeto {b:2,x:40,c:40}
+//     // Inicializamos un objeto
+//     var distancia = {};
 
-    $.each(listadoAntenas, function(i2, item2){
+//     $.each(listadoAntenas, function(i2, item2){
 
-      // Si la antena es distinta a la que estamos recorriendo
-      if(item1["Antenna"] != i2["Antenna"])
-      {
-        // Distancia a la antena item1 a item2
-        distancia[item2["Antenna"]] = 
-          getDistanceFromLatLonInKm(item1.Latitude, item1.Longitude, 
-                                    item2.Latitude, item2.Longitude);
-      }
+//       // Si la antena es distinta a la que estamos recorriendo
+//       if(item1["Antenna"] != i2["Antenna"])
+//       {
+//         // Distancia a la antena item1 a item2
+//         distancia[item2["Antenna"]] = 
+//           getDistanceFromLatLonInKm(item1.Latitude, item1.Longitude, 
+//                                     item2.Latitude, item2.Longitude);
+//       }
 
-    });
+//     });
 
-    // Agregamos las distancias a todas las antenas
-    // Para crear un Objeto del tipo: a:{b:2,x:40,c:40}, donde a,b,x,c son los nombres de las antenas
-    antenasDistancias[item1["Antenna"]] = distancia;
+//     // Agregamos las distancias a todas las antenas
+//     // Para crear un Objeto del tipo: a:{b:2,x:40,c:40}, donde a,b,x,c son los nombres de las antenas
+//     antenasDistancias[item1["Antenna"]] = distancia;
 
+//   });
+
+// }
+
+
+// Inicializamos el punto de origen (Technical Building)
+var base = new Object();
+    base["Antenna"] = "base";
+    base["Latitude"] = -23.02336414219032;
+    base["Longitude"] = -67.75367796421051;
+    base["Height"] = 5074.88584582601;
+
+listadoAntenas.push(base);
+
+function MenorDistancia(punto, arreglo){
+
+  // Obtenemos la distancia mínima desde el punto a los items del arreglo
+  var min = _.min(arreglo, function(item) {
+
+
+    if(item["Antenna"] != punto["Antenna"]){
+      
+      console.log(item.Latitude);
+
+      return getDistanceFromLatLonInMts(punto.Latitude, punto.Longitude, 
+                              item.Latitude, item.Longitude);
+    }
   });
+
+  console.log(min);
 
 }
 
-function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
+function getDistanceFromLatLonInMts(lat1,lon1,lat2,lon2) {
   
   var R = 6371 * 1000; // Radio de la tierra en metros
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
